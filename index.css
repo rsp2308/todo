@@ -17,10 +17,10 @@
     /* text-align: center; */
     padding: 10px;
     color: turquoise;
-    
+
 }
 
-.todo-app{
+.todo-app {
     width: 100%;
     max-width: 540px;
     background: #1f0d0d;
@@ -30,7 +30,7 @@
     filter: drop-shadow(0 0 0.75rem #0bddc1);
 }
 
-.todo-app h2{
+.todo-app h2 {
     /* font-size: 2.5rem; */
     /* font-weight: 700; */
     color: #0bddc1;
@@ -39,7 +39,8 @@
     align-items: center;
     /* justify-content: center; */
 }
-.row{
+
+.row {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -48,16 +49,30 @@
     padding-left: 20px;
     margin-bottom: 25px;
 }
+
 input {
-    padding: 13px;
-    text-align: center;
+    flex: 1;
+    padding: 10px;
+    font-weight: 14px;
+    /* text-align: center; */
     border: none;
     outline: none;
     /* border-radius: 30px; */
     /* margin-right: 10px; */
-    color: teal;
+    /* color: teal; */
     background: transparent;
     /* border: gray px solid; */
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    border-radius: 40px;
+    cursor: pointer;
+    color: #1d2120;
+    background: #0ce0c7;
+    font-size: 16px;
 }
 
 .fill {
@@ -75,28 +90,57 @@ input {
 }
 
 ul li {
+    position: relative;
     /* text-decoration:line-through; */
     list-style: none;
     color: #0ac9b0;
-    font-size: 20px;
-    padding: 10px;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
     /* border-bottom: #0ac9b0 solid 1px; */
     cursor: pointer;
 }
 
 ul li::before {
-    content: '✔️';
-    border: grey solid 1px;
+    content: '';
+    /* border: grey solid 1px; */
     border-radius: 50%;
+    width: 28px;
+    height: 28px;
     /* background-image: ; */
     /* gap: 40px; */
-    margin-right: 100px;
-    position: relative;
-    top: 2px;
+    /* margin-right: 100px; */
+    position: absolute;
+    background-image: url(assests/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
 }
 
-#checked {
+ul li.checked {
     text-decoration: line-through;
     color: #0ac9b0;
-    display: none;
+    /* display: none; */
+}
+ul li.checked::before{
+background: url(assests/checked.png);
+filter: invert(1);
+/* background-position: center; */
+background-size: cover;
+}
+ul li span {
+    position: absolute;
+    right: 0px;
+    height: 40px;
+    width: 40px;
+    top: 5px;
+    font-size: 22px;
+    line-height: 40px; 
+    text-align: center;
+    cursor: pointer;
+    color: #0ac9b0;
+    border-radius: 50%;
+}
+ul li span:hover {
+    background: #253230; ;
 }
